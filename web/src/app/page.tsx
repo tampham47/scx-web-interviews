@@ -1,99 +1,173 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { Button } from "@mui/material";
+"use client";
+
+import { Header } from "./components/header";
+import styled from "styled-components";
+import { ScContainer } from "./components/grid";
+import AddIcon from "@mui/icons-material/Add";
+import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
+import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import CakeOutlinedIcon from "@mui/icons-material/CakeOutlined";
+
+const ScMain = styled.main``;
+
+const ScBody = styled.div`
+  display: flex;
+`;
+
+const ScBodyContent = styled.div`
+  flex: 5;
+  padding-right: 2rem;
+
+  p {
+    line-height: 1.4;
+  }
+`;
+const ScBodyAside = styled.div`
+  flex: 4;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+`;
+
+const ScTitle = styled.h1`
+  font-weight: normal;
+  margin-bottom: 2rem;
+`;
+
+const ScInformation = styled.p`
+  margin-bottom: 2rem;
+`;
+
+const ScStepList = styled.div``;
+const ScStepItem = styled.div`
+  border-bottom: 1px solid whitesmoke;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+const ScStepItemIcon = styled.div`
+  flex: none;
+`;
+const ScStepItemContent = styled.div`
+  margin-left: 1rem;
+  display: flex;
+  align-items: flex-start;
+`;
+const ScStepBlock = styled.div`
+  padding-right: 2rem;
+  max-width: 160px;
+  flex: none;
+`;
+const ScStepBlockGroup = styled.div`
+  display: flex;
+`;
+const ScStepBlockLabel = styled.div`
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+`;
+const ScStepBlockValue = styled.div`
+  font-weight: 500;
+`;
+
+const ScButton = styled.button`
+  color: #464646;
+  border: 2px solid #c8626d;
+  background-color: white;
+  padding: 8px 16px 8px 12px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: all 0.3s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #e3b0b6;
+  }
+
+  svg {
+    margin-right: 4px;
+  }
+`;
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div>
-        <Button variant="contained">Button</Button>
-      </div>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+    <ScMain>
+      <Header />
+      <ScContainer>
+        <ScBody>
+          <ScBodyContent>
+            <ScTitle>Whole-Grain Banana Bread</ScTitle>
+            <ScInformation>
+              This one-bowl banana bread — our <u>2018 Recipe of the Year</u> —
+              uses the simplest ingredients, but is incredibly moist and
+              flavorful. While the recipe calls for a 50/50 mix of flours
+              (all-purpose and whole wheat), we often make the bread 100% whole
+              wheat, and honestly? No one can tell, it&apos;s that good! And not
+              only is this bread delicious — it&apos;s versatile.
+            </ScInformation>
+            <ScStepList>
+              <ScStepItem>
+                <ScStepItemIcon>
+                  <AccessTimeOutlinedIcon style={{ width: 24, height: 24 }} />
+                </ScStepItemIcon>
+                <ScStepItemContent>
+                  <ScStepBlock>
+                    <ScStepBlockLabel>Prep</ScStepBlockLabel>
+                    <ScStepBlockValue>10 mins</ScStepBlockValue>
+                  </ScStepBlock>
+                  <ScStepBlock>
+                    <ScStepBlockLabel>Bake</ScStepBlockLabel>
+                    <ScStepBlockValue>1 hr - 1 hr 15mins</ScStepBlockValue>
+                  </ScStepBlock>
+                  <ScStepBlock>
+                    <ScStepBlockLabel>Total</ScStepBlockLabel>
+                    <ScStepBlockValue>1 hr 10 mins</ScStepBlockValue>
+                  </ScStepBlock>
+                </ScStepItemContent>
+              </ScStepItem>
+              <ScStepItem>
+                <ScStepItemIcon>
+                  <CakeOutlinedIcon style={{ width: 24, height: 24 }} />
+                </ScStepItemIcon>
+                <ScStepItemContent>
+                  <ScStepBlock>
+                    <ScStepBlockLabel>YIELD</ScStepBlockLabel>
+                    <ScStepBlockValue>
+                      1 loaf, 12 generous servings
+                    </ScStepBlockValue>
+                  </ScStepBlock>
+                  <ScStepBlockGroup>
+                    <ScButton>
+                      <AddIcon style={{ width: 14, height: 14 }} /> Save Recipe
+                    </ScButton>
+                    <ScButton>
+                      <LocalPrintshopOutlinedIcon
+                        style={{ width: 14, height: 14 }}
+                      />
+                      Print
+                    </ScButton>
+                  </ScStepBlockGroup>
+                </ScStepItemContent>
+              </ScStepItem>
+            </ScStepList>
+          </ScBodyContent>
+          <ScBodyAside>
+            <img
+              src="https://source.unsplash.com/random/800x600?Pizza"
+              alt="Pizza"
             />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          </ScBodyAside>
+        </ScBody>
+      </ScContainer>
+    </ScMain>
   );
 }
