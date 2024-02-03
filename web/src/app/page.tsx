@@ -8,10 +8,15 @@ import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlin
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import CakeOutlinedIcon from "@mui/icons-material/CakeOutlined";
 
-const ScMain = styled.main``;
+const ScMain = styled.main`
+  margin-bottom: 8rem;
+`;
 
 const ScBody = styled.div`
-  display: flex;
+  @media screen and (min-width: 920px) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 `;
 
 const ScBodyContent = styled.div`
@@ -34,22 +39,38 @@ const ScBodyAside = styled.div`
 
 const ScTitle = styled.h1`
   font-weight: normal;
-  margin-bottom: 2rem;
+  font-size: 32px;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+
+  @media screen and (min-width: 920px) {
+    font-size: 42px;
+    margin-bottom: 2rem;
+  }
 `;
 
 const ScInformation = styled.p`
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: 920px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const ScStepList = styled.div``;
-const ScStepItem = styled.div`
+const ScStepItemDiv = styled.div`
   border-bottom: 1px solid whitesmoke;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+`;
+const ScStepItem = styled.div`
+  padding-top: 0.5rem;
   display: flex;
 
   &:last-child {
     border-bottom: none;
+  }
+
+  @media screen and (min-width: 920px) {
+    padding-top: 1rem;
   }
 `;
 const ScStepItemIcon = styled.div`
@@ -59,18 +80,23 @@ const ScStepItemContent = styled.div`
   margin-left: 1rem;
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 `;
 const ScStepBlock = styled.div`
+  flex: none;
   padding-right: 2rem;
   max-width: 160px;
-  flex: none;
+  margin-bottom: 0.5rem;
+
+  @media screen and (min-width: 920px) {
+    margin-bottom: 1rem;
+  }
 `;
 const ScStepBlockGroup = styled.div`
   display: flex;
 `;
 const ScStepBlockLabel = styled.div`
   font-size: 12px;
-  font-weight: 600;
   text-transform: uppercase;
 `;
 const ScStepBlockValue = styled.div`
@@ -88,6 +114,7 @@ const ScButton = styled.button`
   font-weight: 500;
   display: flex;
   align-items: center;
+  user-select: none;
 
   &:hover {
     background-color: #e3b0b6;
@@ -104,6 +131,12 @@ export default function Home() {
       <Header />
       <ScContainer>
         <ScBody>
+          <ScBodyAside>
+            <img
+              src="https://source.unsplash.com/random/800x600?Pizza"
+              alt="Pizza"
+            />
+          </ScBodyAside>
           <ScBodyContent>
             <ScTitle>Whole-Grain Banana Bread</ScTitle>
             <ScInformation>
@@ -134,6 +167,7 @@ export default function Home() {
                   </ScStepBlock>
                 </ScStepItemContent>
               </ScStepItem>
+              <ScStepItemDiv></ScStepItemDiv>
               <ScStepItem>
                 <ScStepItemIcon>
                   <CakeOutlinedIcon style={{ width: 24, height: 24 }} />
@@ -160,12 +194,6 @@ export default function Home() {
               </ScStepItem>
             </ScStepList>
           </ScBodyContent>
-          <ScBodyAside>
-            <img
-              src="https://source.unsplash.com/random/800x600?Pizza"
-              alt="Pizza"
-            />
-          </ScBodyAside>
         </ScBody>
       </ScContainer>
     </ScMain>

@@ -3,7 +3,15 @@ import styled from "styled-components";
 import { ScContainer } from "./grid";
 
 const ScMain = styled.header`
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: 600px) {
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 920px) {
+    margin-bottom: 4rem;
+  }
 `;
 
 const ScBody = styled.div`
@@ -35,9 +43,14 @@ const ScLink = styled(Link)`
   margin-right: 14px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s;
+  display: none;
 
   &:hover {
     border-bottom: 2px solid #c8626d;
+  }
+
+  @media screen and (min-width: 600px) {
+    display: initial;
   }
 `;
 
