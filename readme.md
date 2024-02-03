@@ -6,6 +6,8 @@ I applied for the fullstack position. This is my results of the assignment.
 
 ## 1. Website
 
+Folder: `./web`
+
 Regarding the web, I tried to make it as close as possible to the design. 
 To be honest, I haven't spent time on NextJs as well as Mui UI, hence I don't have much experience on this. 
 
@@ -19,3 +21,7 @@ I do believe that, with the basic knowledge of CSS I can work well with any CSS 
 
 
 ## 2. NodeJS Back-end
+
+Folder: `./nodejs-interviews`
+
+I don't have many things to say, the tests explain themself.
